@@ -55,7 +55,7 @@ if (0>version_compare(PHP_VERSION, '5')){
              private function plausibilisieren() {
                  // Fehlervariable
                  $anmelden = 0;
-                 $p = new Plausi();
+                 $p = new plausi();
                  $anmelden += $p -> namentest($_POST['name']);
                  $anmelden += $p -> namentest($_POST['vorname']);
                  $anmelden += $p -> emailtest($_POST['email']);
