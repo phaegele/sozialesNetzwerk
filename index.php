@@ -1,4 +1,6 @@
 <?php 
+	setcookie ("Image2Food" , time(), time()+ 60*60*24*120);
+    session_start();
 /**
 * Festlegung der Untergrenze der PHP-Version
 * @version 1.0
@@ -17,8 +19,14 @@ if(0>version_compare(PHP_VERSION, '5')){
 </head>
 <body>
 	<div id="nav">
-	<?php 
-	   require_once("nav.php");
+	<?php
+		if ( (isset($_SESSION['login']) ) && ($_SESSION['login']  == true))
+		{
+			require('navmitglieder.php');
+		} else {
+			require("nav.php");
+		}
+	   
 	?>
 	</div>
 	<div id="content"></div>
@@ -29,9 +37,35 @@ if(0>version_compare(PHP_VERSION, '5')){
 	 * Das soziale Netzwerk für Kochideen
 	 * Die Einstiegsseite mit der Hauptklasse
 	 */
-	class index{
-        
+	class Index {
+		function besucher () {
+			if ((isset($_SESSION['login'])) && $_SESSION['login'] == true) {
+
+				echo 	"<h3>Mitgliederbereich.</h3> 
+						<h5>Sie sind angemeldet.</h5>";
+
+			} else if ((isset($_SESSION['login'])) && $_SESSION['login'] == false) {
+				
+				echo 	"<h3>Sie können sich jetzt zum Mitgliederbereich anmelden.</h3>";
+
+			} else if (isset($_COOKIE['Image2Food'])) {
+
+				echo "<h3>Schön, Sie wiederzusehen!</h3>
+					<h5>Melden Sie sich an, um in den geshloessenen Mitgliederbereich zu gelangen,
+					wenn Sie sich schon registriert haben.</h5>";
+
+			} else {
+				echo "<div id='indextext'>Willkommen ".
+					"auf unserer Website. " .
+					"schauen Sie sich um. " .
+					"Sie können sich hier registrieren  und dann " .
+					"in einem geschlossenen " .
+					"Mitgliederbereich anmelden.</div>";
+			}
+		} 
 	}
+	$obj= new Index();
+	$obj -> besucher();
 	?>
 </body>
 </html>

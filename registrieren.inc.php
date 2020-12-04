@@ -1,5 +1,6 @@
 <html>
 <form action="registrieren.php" method="post">
+<!-- Name -->
 	<label class="reg_label">Name</label>
 	<span class="pflichtmarker">*</span>
 	<input name="name" maxlength="30"
@@ -9,6 +10,7 @@
 	/>
 	<span class="fehlermeldung"></span>
 	<br />
+<!-- vorname -->
 	<label class="reg_label">Vorname</label>
 	<span class="pflichtmarker"> * </span>
 	<input name="vorname" maxlength="30"
@@ -18,6 +20,7 @@
 	/>
 	<span class="fehlermeldung"></span>
 	<br />
+<!-- email -->
 	<label class="reg_label">E-Mail</label>
 	<span class="pflichtmarker"> * </span>
 	<input name="email" maxlength="30"
@@ -27,6 +30,7 @@
 	/>
 	<span class="fehlermeldung"></span>
 	<br />
+<!-- userid -->
 	<label class="reg_label">Userid</label>
 	<span class="pflichtmarker"> * </span>
 	<input name="userid" maxlength="20"
@@ -36,6 +40,7 @@
 	/>
 	<span class="fehlermeldung"></span>
 	<br />
+<!-- PW -->
 	<label class="reg_label">Passwort</label>
 	<span class="pflichtmarker"> * </span>
 	<input name="pw" type="password" maxlength="50"
@@ -45,13 +50,13 @@
 	/>
 	<span class="fehlermeldung"></span>
 	<br />
+<!-- zusatzinfos -->
 	<label class="reg_label">Zusatzinfos</label>
 	<span class="pflichtmarker"> </span>
 	<textarea name="zusatzinfos" rows="5" cols="30">
-	<?php
-	if (isset($_POST['zusatzinfos'])){echo $_POST['zusatzinfos'];}
-	?>
-	</textarea>
+<?php
+if (isset($_POST['zusatzinfos'])){echo $_POST['zusatzinfos'];}
+?></textarea>
 	<span class="fehlermeldung"></span>
 	<br />
 	<input type="submit" />

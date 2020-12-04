@@ -6,7 +6,8 @@
 if (0>version_compare(PHP_VERSION, '5')){
     die ('<h1>Für diese Anwendung ict mindesens PHP 5 notwendig</h1>');
 }
-    
+session_start();
+
 ?>
 <!DOCTYPE HTML>
 <html lang="de">
@@ -17,8 +18,8 @@ if (0>version_compare(PHP_VERSION, '5')){
 	</head>
 	<body>
 		<?php 
-            require_once ('nav.php');
-            require_once ('plausi.inc.php');
+            require ('nav.php');
+            require ('plausi.inc.php');
 		?>
 		<h1>Registrierung</h1>
 		<?php 
@@ -59,16 +60,16 @@ if (0>version_compare(PHP_VERSION, '5')){
                  $anmelden += $p -> namentest($_POST['name']);
                  $anmelden += $p -> namentest($_POST['vorname']);
                  $anmelden += $p -> emailtest($_POST['email']);
-                 $anmelden +=    $p -> nutzerdatentest($_POST['userid']);
+                 $anmelden += $p -> nutzerdatentest($_POST['userid']);
                  $anmelden += $p -> nutzerdatentest($_POST['pw']);
                  // Kritische Zeichen auf der freien Eingabe
                  // der Zusatzinfos eliminieren
                  $_POST['zusatzinfos'] =preg_replace("/[<|>|$|%|&|§]/", "#",$_POST['zusatzinfos']);
                  // Testausgaben für den derzeitigen Stand
                  // des Projekts
-                 echo "Die Eingaben: <hr />";
+                 echo "<hr /> Die Eingaben: <hr />";
                  print_r($_POST);
-                 echo "<br />Fehleranzahl: " . $anmelden . "<hr />";
+                 echo "<br />Fehler: $anmelden<hr />";
                  if ($anmelden == 0) return true;
                  else return false;
              }
@@ -79,9 +80,35 @@ if (0>version_compare(PHP_VERSION, '5')){
              * zur Verfügung 
              */
              private function eintragen_db() {
-                 
+                require_once ("db.inc.php");
+
+                if ($stmt = $pdo -> prepare(
+                    "INSERT INTO mitglieder" .
+                    " (name, vorname, email, zusatzinfos, rolle, " .
+                    " userid, pw) " . " VALUES (:name, :vorname, :email, :zusatzinfos, :rolle, :userid, :pw)")) {
+
+                     if($stmt -> execute(
+                         array(
+                         ':name' => $_POST["name"],
+                         ':vorname' => $_POST["vorname"],
+                         ':email' => $_POST["email"],
+                         ':zusatzinfos' => $_POST["zusatzinfos"],
+                         ':rolle' => "Mitglied",
+                         ':userid' => $_POST["userid"],
+                         ':pw' => md5($_POST["pw"])
+                         )
+                         )) {
+
+                            $_SESSION["name"] = $_POST["userid"];
+                            $_SESSION["login"] = false;
+                            $dat = "index.php";
+                         } else {
+                            $dat = "regfehler.php";
+
+                        }
+                     header("Location: $dat");
+                }
              }
-            
         }
         
 		$regobj = new Registrierung();
