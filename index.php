@@ -22,9 +22,9 @@ if(0>version_compare(PHP_VERSION, '5')){
 	<?php
 		if ( (isset($_SESSION['login']) ) && ($_SESSION['login']  == true))
 		{
-			require('navmitglieder.php');
+			@require('navmitglieder.php');
 		} else {
-			require("nav.php");
+			@require("nav.php");
 		}
 	   
 	?>

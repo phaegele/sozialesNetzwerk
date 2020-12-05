@@ -18,12 +18,12 @@ session_start();
 	</head>
 	<body>
 		<?php 
-            require ('nav.php');
-            require ('plausi.inc.php');
+            @require ('nav.php');
+            @require ('plausi.inc.php');
 		?>
 		<h1>Registrierung</h1>
 		<?php 
-		require ('registrieren.inc.php');
+		@require ('registrieren.inc.php');
 		/**
 		 * Foto2Gericht
 		 * Das soziale Netzwerk für Kochideen
@@ -80,7 +80,7 @@ session_start();
              * zur Verfügung 
              */
              private function eintragen_db() {
-                require_once ("db.inc.php");
+                @require_once ("db.inc.php");
 
                 if ($stmt = $pdo -> prepare(
                     "INSERT INTO mitglieder" .

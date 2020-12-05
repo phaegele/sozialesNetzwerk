@@ -18,14 +18,14 @@
     <body>
         <div id="nav">
 <?php
-    require ("nav.php");
+    @require ("nav.php");
 ?>
         </div>
 
         <div id="content">
             <h1>Registrierungsfehler</h1>
 <?php
-    require ("registrieren.inc.php");
+    @require ("registrieren.inc.php");
     
     class RegFehler {
         public function fehler() {
