@@ -8,6 +8,10 @@
 if(0>version_compare(PHP_VERSION, '5')){
     die ('<h1>Für diese Anwendung ist mindestens PHP 5 notwendig</h1>');
 }
+
+/* Fehlerklasse für das Einbinden ext. Dateien */
+class MeineAusnahme extends Exception {}
+
 ?>
 <!DOCTYPE html>
 
@@ -20,19 +24,40 @@ if(0>version_compare(PHP_VERSION, '5')){
 <body>
 	<div id="nav">
 	<?php
-		if ( (isset($_SESSION['login']) ) && ($_SESSION['login']  == true))
-		{
-			@require('navmitglieder.php');
-		} else {
-			@require("nav.php");
+		try{
+			
+			/* Fehlervariable für Navi-Einbinde-Fehler */
+			$navFehler = false;
+
+			if ( (isset($_SESSION['login']) ) && ($_SESSION['login']  == true)){
+				if (!@include('navmitglieder.php')){
+					throw new MeineAusnahme();
+				}
+			} else {
+				if (!@include('nav.php')){
+					throw new MeineAusnahme();					
+				}
+			}
 		}
-	   
+		catch (MeineAusnahme $e) {
+			$navFehler = true;
+		}
+
 	?>
 	</div>
 	<div id="content"></div>
 	<h1>Image2Food - Sag mir was ich daraus kochen kann</h1>
 	<h2>Das soziale, multimediale Netzwerk für Kochideen</h2>
 	<?php 
+
+	/**Ausgabe Fehlermeldung für Navi-Fehler */
+	if ($navFehler == true) {
+		die ('Leider gibt es ein Problem mit der Website.
+		Wir arbeiten mi Hochdruck daran.
+		Besuchen Sie uns in Kürze wieder.');
+	}
+
+
 	/** 
 	 * Das soziale Netzwerk für Kochideen
 	 * Die Einstiegsseite mit der Hauptklasse

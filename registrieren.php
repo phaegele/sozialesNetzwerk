@@ -4,7 +4,7 @@
     *@version: 1.0 
     **/
 if (0>version_compare(PHP_VERSION, '5')){
-    die ('<h1>Für diese Anwendung ict mindesens PHP 5 notwendig</h1>');
+    die ('<h1>Für diese Anwendung ist mindesens PHP 5 notwendig</h1>');
 }
 session_start();
 
