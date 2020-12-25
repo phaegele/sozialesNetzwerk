@@ -18,8 +18,14 @@
 	if (isset($_POST['pw']))echo "value='" . $_POST['pw'] . "'";
 	?>
 	/>
-	<span class="fehlermeldung"></span>
+	<span class="fehlermeldung"></span><br />
+
+	<img src="captchagenerieren.php" alt="Test"/>
 	<br />
+	<label class="reg_label">Captcha</label>
+	<span class="pflichtmarker"> * </span>
+	<input name="captcha" />
+	<span class="fehlermeldung"></span><br />
 	<input type="submit" value="Daten absenden"/>
 	</form>
 </html>
