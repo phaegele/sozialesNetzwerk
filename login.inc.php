@@ -19,8 +19,7 @@
 	?>
 	/>
 	<span class="fehlermeldung"></span><br />
-
-	<img src="captchagenerieren.php" alt="Test"/>
+	<img src="captchagenerieren.php" alt="Captcha" />
 	<br />
 	<label class="reg_label">Captcha</label>
 	<span class="pflichtmarker"> * </span>

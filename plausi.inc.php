@@ -5,7 +5,7 @@
  */
 class plausi {
     
-
+    /** Methode für die Plausibilisierung der Namen */
 
     public function namentest($wert){
         
@@ -25,7 +25,7 @@ class plausi {
         }
         
     }
-    
+    /* Methode zur Plausibilisierung der E-Mail */
     public function emailtest($wert){
         
         $fehler = 0;
@@ -52,7 +52,7 @@ class plausi {
         return $fehler;
        
     }
-    
+    /** Methode zur Plausibilisierung der Nutzerdaten */    
     public function nutzerdatentest($wert){
         
         $fehler = 0;
@@ -79,6 +79,12 @@ class plausi {
         echo "<hr />UserID oder PW OK.";
         return $fehler;
     }
-    
+    /** Testmethode für den Captchacode */
+    public function captchatest($wert){
+        $fehler = 0;
+        if ($_SESSION['captchacode'] != $wert){
+            return $fehler = 1;
+        }
+    }
 }
 ?>

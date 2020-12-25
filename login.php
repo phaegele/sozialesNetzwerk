@@ -61,14 +61,17 @@ if (0>version_compare(PHP_VERSION, '5')){
                  $p = new plausi();
                  $anmelden += $p -> nutzerdatentest($_POST['userid']);
                  $anmelden += $p -> nutzerdatentest($_POST['pw']);
-                 
+                 $anmelden += $p -> captchatest($_POST['captcha']);
                  // Testausgaben für den derzeitigen Stand
                  // des Projekts
                  echo "<hr /> Die Eingaben: <hr />";
                  print_r($_POST);
                  echo "<br />Fehleranzahl: " . $anmelden . "<hr />";
-                 if ($anmelden == 0) return true;
-                 else return false;
+                 if ($anmelden == 0){
+                     return true;
+                 } else {
+                     return false;
+                 }
              }
             
              /** 
