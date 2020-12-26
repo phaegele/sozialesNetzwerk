@@ -13,25 +13,27 @@
                 $vb = "thumb";
                 $verzeichnis = opendir($bv);
                 $bilder = Array();
-                while ($datei = readdir($verzeichnis) !== false){
+                while (($datei = readdir($verzeichnis)) !== false){
                     if ((preg_match("/\.jpe?g$/i", $datei)) | 
                         (preg_match("/\.png$/i", $datei)  )){
                             $bilder[] = $datei;
-                    }
+                    } 
                 }
                 closedir($verzeichnis);
                 $verzeichnis = opendir($vb);
-                while($datei = readdir($verzeichnis) !== false) {
-                    if ($datei != "." AND $datei != "..") {
-                        @unlink($vb/$datei);
+                while(($datei = readdir($verzeichnis)) !== false) {
+                    if (($datei != ".") && ($datei != "..")) {
+                        @unlink("$vb/$datei");
+                        //echo "<h2>$datei</h2>";
                     }
                 }
                 closedir($verzeichnis);
                 foreach($bilder as $bild){
                     if (preg_match("/\.png$/i", $bild)){
-                        $b = imagecreatefrompng($bv/$bild);
+                        $b = imagecreatefrompng("$bv/$bild");
+                        $bild = (explode(".",$bild)[0]).".jpg";
                     } else {
-                        $b = imagecreatefromjpeg($bv/$bild);
+                        $b = imagecreatefromjpeg("$bv/$bild");
                     }
                     $originalbreite = imagesx($b);
                     $originalhoehe = imagesy($b);
@@ -46,7 +48,7 @@
             function thumbernail_anzeigen(){
                 $bv = "thumb";
                 $verzeichnis = opendir($bv);
-                while ($datei = readdir($verzeichnis) !== false) {
+                while (($datei = readdir($verzeichnis)) !== false) {
                     if (preg_match("/\.jpe?g$/i", $datei)) {
                         echo "<a href=''><img src='$bv/$datei'"
                         ." alt='Vorschaubild' /></a>";
