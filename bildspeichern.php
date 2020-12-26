@@ -28,29 +28,28 @@ class Bildspeichern {
                     if ($stmt = $pdo -> prepare
                      ("SELECT userid, id_mitglied FROM mitglieder")){
                         $stmt -> execute();
-                        //$stmt -> bind_result($userid, $id_mitglied);
-                        while ($stmt -> fetch()){
-                            if ($_SESSION["name"] == $userid){
-                                $_SESSION["id_mitglied"] = $id_mitglied;
+                        while ($row = $stmt -> fetch()){
+                            if ($_SESSION["name"] == $row['userid']){
+                                $_SESSION["id_mitglied"] = $row['id_mitglied'];
                                 break;
                             }
                         }
-                        //$stmt -> close();
                     }
-                    if ($stmt = $pdo /*$mysqli*/ -> prepare(
+                    if ($stmt = $pdo -> prepare(
                      "INSERT INTO fragen (bild, zusatzinfos, id_mitglied) ".
-                     "VALUES (?, ?, ?)")){
+                     "VALUES (:bild, :zusatzinfos, :id_mitglied)")){
                         $userid = $_SESSION["id_mitglied"];
                         $bild = $_SESSION["dateiname"];
                         $zusatzinfos = $_POST["zusatzinfos"];
-                        $stmt -> bind_param("sss", $bild, $zusatzinfos, $userid);
-                        if ($stmt->execute()){
-                            $dat = "upload_ok.php";
+                        if ($stmt->execute(array(
+                            ':bild' => $bild,
+                            ':zusatzinfos' => $zusatzinfos,
+                            ':id_mitglied' => $userid))){
+                                    $dat = "upload_ok.php";
                         } else {
                             $dat = "upload_fehler.php";
                         }
-                        $stmt -> close();
-                        $pdo /*$mysqli*/ -> close();
+
                         header("Location: $dat");
                     }
                 }
@@ -62,4 +61,3 @@ class Bildspeichern {
 $obj = new Bildspeichern();
 $obj -> datup();
 ?>
-</html>
