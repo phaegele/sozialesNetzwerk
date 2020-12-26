@@ -68,6 +68,7 @@ class MeineAusnahme extends Exception {}
 
 				echo 	"<h3>Mitgliederbereich.</h3> 
 						<h5>Sie sind angemeldet.</h5>";
+						@require('uploadformular.inc.php');
 
 			} else if ((isset($_SESSION['login'])) && $_SESSION['login'] == false) {
 				
