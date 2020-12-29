@@ -15,7 +15,8 @@ session_start();
 		<meta charset="utf-8" />
 		<title>Sag mir was ich daraus kochen kann - Registrierung</title>
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
-	</head>
+        <link rel="stylesheet" type="text/css" href="lib/css/stil.css" />
+    </head>
 	<body>
 		<?php 
             @require ('nav.php');
