@@ -57,8 +57,15 @@
 <?php
 if (isset($_POST['zusatzinfos'])){echo $_POST['zusatzinfos'];}
 ?></textarea>
-	<span class="fehlermeldung"></span>
+	<span class="fehlermeldung"></span><br />
+<!-- Captcha -->
+	<img src="captchagenerieren.php" alt="Captcha" />
 	<br />
+	<label class="reg_label">Captcha</label>
+	<span class="pflichtmarker"> * </span>
+	<input name="captcha" />
+	<span class="fehlermeldung"></span><br />
+<!-- Absenden -->
 	<input type="submit" />
 	</form>
 </html>
