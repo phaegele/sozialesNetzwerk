@@ -18,10 +18,13 @@ session_start();
         <link rel="stylesheet" type="text/css" href="lib/css/stil.css" />
     </head>
 	<body>
+        <div id="nav">
 		<?php 
             @require ('nav.php');
             @require ('plausi.inc.php');
-		?>
+        ?>
+        </div>
+        <div id="content">
 		<h1>Registrierung</h1>
 		<?php 
 		@require ('registrieren.inc.php');
@@ -116,6 +119,7 @@ session_start();
 		if(sizeof($_POST)>0){
 		    $regobj -> registrieren();
 		}
-		?>
+        ?>
+        </div>
 	</body>
 </html>

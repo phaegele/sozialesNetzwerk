@@ -66,6 +66,6 @@ if (isset($_POST['zusatzinfos'])){echo $_POST['zusatzinfos'];}
 	<input name="captcha" />
 	<span class="fehlermeldung"></span><br />
 <!-- Absenden -->
-	<input type="submit" />
+	<input type="submit" value="Daten absenden" class="hlink"/>
 	</form>
 </html>

@@ -19,10 +19,13 @@ if (0>version_compare(PHP_VERSION, '5')){
     </head>
 
 	<body>
+        <div id="nav">
 		<?php 
             @require ('nav.php');
             @require ('plausi.inc.php');
-		?>
+        ?>
+        </div>
+        <div id="content">
 		<h1>Login</h1>
         <?php
             @require ('login.inc.php');
@@ -112,6 +115,6 @@ if (0>version_compare(PHP_VERSION, '5')){
 		    $logobj -> _login();
 		}
 		?>
-	
+        </DIV>
 	</body>
 </html>

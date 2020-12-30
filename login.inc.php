@@ -25,6 +25,6 @@
 	<span class="pflichtmarker"> * </span>
 	<input name="captcha" />
 	<span class="fehlermeldung"></span><br />
-	<input type="submit" value="Daten absenden"/>
+	<input type="submit" value="Daten absenden" class="hlink"/>
 	</form>
 </html>

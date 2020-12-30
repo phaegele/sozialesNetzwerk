@@ -53,3 +53,67 @@ a {
     -webkit-box-shadow: 5px 5px 5px #888;
     box-shadow: 5px 5px 5px #888;
 }
+.hlink {
+    text-decoration: none;
+    display: inline-block;
+    height: 35px;
+    text-align: center;
+    margin: 5px; padding:5px; 
+    border-style: groove; border-width: 1pt;
+    -moz-border-radius: 5px; -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 5px 2px 3px #888;
+    -webkit-box-shadow: 5px 2px 3px #888;
+    box-shadow: 5px 2px 3px #888;
+}
+.spezielleUeber {
+    background: white; color: #145D05;
+    font-size: 110%;
+}
+form {
+    background: white; color: #145D05;
+    margin:5px; padding: 10px;
+    border-style: inset; border-width: 3pt;
+    -moz-border-radius: 5px; -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 5px 5px 5px #888;
+    -webkit-box-shadow: 5px 5px 5px #888;
+    -moz-box-shadow: 5px 2px 3px #888;
+    -webkit-box-shadow: 5px 2px 3px #888;
+    box-shadow: 5px 2px 3px #888;
+} textarea {
+    margin: 10px; padding: 10px;
+    border-style: solid; border-width: 1pt;
+    -moz-border-radius: 5px; -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 5px 5px 5px #888;
+    -webkit-box-shadow: 5px 5px 5px #888;
+    box-shadow: 5px 5px 5px #888;
+    -moz-box-shadow: 5px 2px 3px #888;
+    -webkit-box-shadow: 5px 2px 3px #888;
+    box-shadow: 5px 2px 3px #888;
+}
+input {
+    margin: 5px; padding: 2px; 
+    border-style: solid; border-width: 1pt;
+    -moz-border-radius: 5px; -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 5px 5px 5px #888;
+    -webkit-box-shadow: 5px 5px 5px #888;
+    -moz-box-shadow: 5px 2px 3px #888;
+    -webkit-box-shadow: 5px 2px 3px #888;
+    box-shadow: 5px 2px 3px #888;
+}
+.reg_label {
+    display: inline-block; width: 200px;
+}
+.thumb  {
+    min-width: 150px; min-height: 100px;
+    margin: 10px; padding: 10px;
+    border-style: groove; border-width: 1pt;
+    -moz-border-radius: 5px; -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 5px 2px 3px #888;
+    -webkit-box-shadow: 5px 2px 3px #888;
+    box-shadow: 5px 2px 3px #888;
+}

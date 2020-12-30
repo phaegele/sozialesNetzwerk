@@ -51,7 +51,7 @@
                 $verzeichnis = opendir($bv);
                 while (($datei = readdir($verzeichnis)) !== false) {
                     if (preg_match("/\.jpe?g$/i", $datei)) {
-                        echo "<a href=''><img src='$bv/$datei'"
+                        echo "<a href='' class='thumb'><img src='$bv/$datei'"
                         ." alt='Vorschaubild' /></a>";
                     }
                 }
