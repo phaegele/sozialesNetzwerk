@@ -64,34 +64,23 @@ class MeineAusnahme extends Exception {}
 	 * Die Einstiegsseite mit der Hauptklasse
 	 */
 	class Index {
-		function besucher () {
-			if ((isset($_SESSION['login'])) && $_SESSION['login'] == true) {
-
-				echo 	"<h3>Mitgliederbereich.</h3> 
-						<h5>Sie sind angemeldet.</h5>";
-				@require('uploadformular.inc.php');
-				echo "<a href='vorschaubilder.php'"
-						." target='vorschau'>Vorschau</a>";
-
-			} else if ((isset($_SESSION['login'])) && $_SESSION['login'] == false) {
-				
-				echo 	"<h3>Sie können sich jetzt zum Mitgliederbereich anmelden.</h3>";
-
+		function besucher() {
+					
+			if (isset($_SESSION["login"]) && ($_SESSION["login"] == "true")) {
+			echo "<div id='indextext'><h3>Mitgliederbereich</h3>" . "Sie sind angemeldet.</div>";
+			@require("uploadformular.inc.php");
+			echo "<a href='vorschaubilder.php'" .
+					" target='vorschau'>Vorschau</a>";
+			
+			} else if (isset($_SESSION["login"]) && ($_SESSION["login"] == "false")) {
+			echo "<div id='indextext'>Sie können sich jetzt zum Mitgliederbereich anmelden.</div>";
 			} else if (isset($_COOKIE['Image2Food'])) {
-
-				echo "<h3>Schön, Sie wiederzusehen!</h3>
-					<h5>Melden Sie sich an, um in den geshloessenen Mitgliederbereich zu gelangen,
-					wenn Sie sich schon registriert haben.</h5>";
-
+			echo "<div id='indextext'>Sch&ouml;n, Sie wiederzusehen. " . "Melden Sie sich an, um in den geschlossenen Mitgliederbereich zu gelangen, wenn Sie sich schon registriert haben.</div>";
 			} else {
-				echo "<div id='indextext'>Willkommen ".
-					"auf unserer Website. " .
-					"schauen Sie sich um. " .
-					"Sie können sich hier registrieren  und dann " .
-					"in einem geschlossenen " .
-					"Mitgliederbereich anmelden.</div>";
+		   echo "<div id='indextext'>Willkommen " . "auf unserer Webseite. " . "Schauen Sie sich um. " . "Sie können sich hier registrieren und dann in " . "einem geschlossenen " . "Mitgliederbereich anmelden.</div>";
+
 			}
-		} 
+	   }
 	}
 	$obj= new Index();
 	$obj -> besucher();
