@@ -46,7 +46,7 @@ class MeineAusnahme extends Exception {}
 
 	?>
 	</div>
-	<div id="content"></div>
+	<div id="content">
 	<h1>Image2Food - Sag mir was ich daraus kochen kann</h1>
 	<h2>Das soziale, multimediale Netzwerk für Kochideen</h2>
 	<?php 
@@ -85,5 +85,6 @@ class MeineAusnahme extends Exception {}
 	$obj= new Index();
 	$obj -> besucher();
 	?>
+	</div>
 </body>
 </html>

@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5 {
     -moz-border-radius: 5px; -webkit-border-radius: 5px;
     border-radius: 5px;
 }
-a {
+a { 
     color: white; background: #6C0610;
     text-emphasis: none;
     display: inline-block;
@@ -28,4 +28,28 @@ a {
     -moz-box-shadow: 5px 2px 3px #888;
     -webkit-box-shadow: 5px 2px 3px #888; 
     box-shadow: 5px 2px 3px #888;    
+}
+#nav {
+    width: 1000px; 
+    height: 40px;
+    margin: auto; 
+    padding: 10px;
+}     
+#content {
+    width: 1000px;
+    margin: auto; padding: 20px;
+    border-style: groove; border-width: 1pt;
+    -moz-border-radius: 5px; -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+#indextext {
+    text-align:justify;
+    background: white; color: #145D05;
+    margin: 5px; padding: 10px;
+    border-style: inset; border-width: 3pt;
+    -moz-border-radius: 5px; -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 5px 5px 5px #888;
+    -webkit-box-shadow: 5px 5px 5px #888;
+    box-shadow: 5px 5px 5px #888;
 }
