@@ -1,5 +1,5 @@
 <html>
-<form action="registrieren.php" method="post">
+<form action="registrieren.php" method="post" id="regform">
 <!-- Name -->
 	<label class="reg_label">Name</label>
 	<span class="pflichtmarker">*</span>

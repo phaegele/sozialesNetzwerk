@@ -16,6 +16,8 @@ if (0>version_compare(PHP_VERSION, '5')){
 		<title>Sag mir was ich daraus kochen kann - Anmeldung</title>
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="lib/css/stil.css" />
+        <script type="text/javascript" src="lib/js/script.js"></script>
+        <script type="text/javascript" src="lib/js/login.js"></script>
     </head>
 
 	<body>
