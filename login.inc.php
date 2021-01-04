@@ -1,5 +1,5 @@
 <html>
-<form action="login.php" method="post">
+<form action="login.php" method="post" id="loginform">
 <!-- userid -->
 	<label class="reg_label">Userid</label>
 	<span class="pflichtmarker"> * </span>
