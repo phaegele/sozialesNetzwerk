@@ -9,4 +9,11 @@
     </textarea><br/>
     <input type="submit" value="Starte upload" class="hlink" />
     <script type="text/javascript" src="lib/js/index.js"></script>
+<<<<<<< HEAD
 </form>
+=======
+</form>
+<div id="meldung"> 
+		Alle Pflichtfelder müssen ausgefüllt werde
+</div>
+>>>>>>> 7cec1d649e5ecaf1e2175218bdc153d75cae0bd9

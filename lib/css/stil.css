@@ -122,4 +122,24 @@ a:hover{
 }
 .hlink:hover {
     color: white; background: #6C0610;
+<<<<<<< HEAD
+=======
+}
+#meldung {
+    position: relative; top: -180px; left: 420px;
+    text-align: center;
+    visibility: hidden;
+    background: white; color: #6C0610;
+    width: 200px; height:40px;
+    margin: -40px; padding:10px;
+    border-style: inset; border: width 3pt;
+    -moz-border-radius: 5px; -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 5px 5px 5px #888;
+    -webkit-box-shadow: 5px 5px 5px #888;
+    box-shadow: 5px 5px 5px #888;
+}
+.fehlermeldung {
+    color: #6c0610;
+>>>>>>> 7cec1d649e5ecaf1e2175218bdc153d75cae0bd9
 }
