@@ -10,3 +10,6 @@
     <input type="submit" value="Starte upload" class="hlink" />
     <script type="text/javascript" src="lib/js/index.js"></script>
 </form>
+<div id="meldung"> 
+		Alle Pflichtfelder müssen ausgefüllt werde
+</div>

@@ -27,4 +27,7 @@
 	<span class="fehlermeldung"></span><br />
 	<input type="submit" value="Daten absenden" class="hlink"/>
 	</form>
+	<div id="meldung"> 
+		Alle Pflichtfelder müssen ausgefüllt werde
+	</div>
 </html>
