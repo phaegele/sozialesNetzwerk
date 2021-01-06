@@ -1,4 +1,3 @@
-<html>
 <form action="registrieren.php" method="post" id="regform">
 <!-- Name -->
 	<label class="reg_label">Name</label>
@@ -56,10 +55,11 @@
 	<textarea name="zusatzinfos" rows="5" cols="30">
 <?php
 if (isset($_POST['zusatzinfos'])){echo $_POST['zusatzinfos'];}
-?></textarea>
-	<span class="fehlermeldung"></span><br />
+?>
+	</textarea>
+	<br />
 <!-- Captcha -->
-	<img src="captchagenerieren.php" alt="Captcha" />
+	<img class="captcha" src="captchagenerieren.php" alt="Captcha" />
 	<br />
 	<label class="reg_label">Captcha</label>
 	<span class="pflichtmarker"> * </span>
@@ -71,4 +71,3 @@ if (isset($_POST['zusatzinfos'])){echo $_POST['zusatzinfos'];}
 	<div id="meldung"> 
 		Alle Pflichtfelder müssen ausgefüllt werde
 	</div>
-</html>

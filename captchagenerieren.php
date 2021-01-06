@@ -25,7 +25,7 @@ for ($i = 0; $i < $anzahlZeichen; $i++) {
 $bgc = imagecolorallocate($image, 230, 230, 230);
 imagefill($image, 0, 0, $bgc);
 
-$font = "fonts/Anorexia_.ttf";
+$font = "fonts/Anorexia.ttf";
 if (file_exists($font)) {
   for ($i = 0; $i < $anzahlZeichen; $i++) {
     ImageTTFText($image, rand(20, 80), rand(-20, 60), 
@@ -33,9 +33,9 @@ if (file_exists($font)) {
      $farben[rand(0, $anzahlZeichen - 1)],
      $font, $captchacode[$i]);
   }
-} else {
+} else { /** alternaitves Captcha bei fehlender Font-Datei */
   for ($i = 0; $i < $anzahlZeichen; $i++) {
-    imagestring($image, rand(2, 5), 
+    imagestring($image, rand(4, 5), 
      $i*40, rand(20, 80), 
      $captchacode[$i], 
      $farben[rand(0, $anzahlZeichen-1)]);
