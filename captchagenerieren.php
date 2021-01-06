@@ -20,16 +20,28 @@ $image = imagecreate(350, 130);
 $farben = array();
 for ($i = 0; $i < $anzahlZeichen; $i++) {
   $farben[$i] = imagecolorallocate($image, 
-    rand(0, 255), rand(0, 255), rand(0, 255));
+    rand(0, 100), rand(0, 100), rand(0, 200));
 }
 $bgc = imagecolorallocate($image, 230, 230, 230);
 imagefill($image, 0, 0, $bgc);
-for ($i = 0; $i < $anzahlZeichen; $i++) {
-  ImageTTFText($image, rand(20, 80), rand(-20, 60), 
-    50 + ($i * 50), rand(80, 120), 
-    $farben[rand(0, $anzahlZeichen - 1)],
-    "fonts/Anorexia.ttf", $captchacode[$i]);
+
+$font = "fonts/Anorexia_.ttf";
+if (file_exists($font)) {
+  for ($i = 0; $i < $anzahlZeichen; $i++) {
+    ImageTTFText($image, rand(20, 80), rand(-20, 60), 
+     50 + ($i * 50), rand(80, 120), 
+     $farben[rand(0, $anzahlZeichen - 1)],
+     $font, $captchacode[$i]);
+  }
+} else {
+  for ($i = 0; $i < $anzahlZeichen; $i++) {
+    imagestring($image, rand(2, 5), 
+     $i*40, rand(20, 80), 
+     $captchacode[$i], 
+     $farben[rand(0, $anzahlZeichen-1)]);
+  }
 }
+
 for ($i = 0; $i < $anzahlZeichen; $i++) {
   imageline($image, rand(0, 10), rand(0, 150), 
     rand(330, 340), rand(0, 150), $farben[$i]);
