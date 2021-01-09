@@ -44,6 +44,8 @@ session_start();
             public function registrieren() {
                 if ($this -> plausibilisieren()) {
                     $this -> eintragen_db();
+                } else {
+                    echo "<script>eingabefehler(1);</script>";
                 }
             }
             
@@ -73,9 +75,9 @@ session_start();
                  $_POST['zusatzinfos'] =preg_replace("/[<|>|$|%|&|§]/", "#",$_POST['zusatzinfos']);
                  // Testausgaben für den derzeitigen Stand
                  // des Projekts
-                 echo "<hr /> Die Eingaben: <hr />";
+                 /*echo "<hr /> Die Eingaben: <hr />";
                  print_r($_POST);
-                 echo "<br />Fehler: $anmelden<hr />";
+                 echo "<br />Fehler: $anmelden<hr />";*/
                  if ($anmelden == 0) return true;
                  else return false;
              }

@@ -1,0 +1,20 @@
+<ul>
+
+<li>Alle Namen bestehen aus minimal 2 und maximal 30 Zeichen vom Typ Wordcharacter.</li>
+
+<li>Die E-Mail darf aus maximal 30 Zeichen bestehen und muss ein @-Zeichen enthalten. 
+Diesem muss mindestens ein alphanumerisches Zeichen vorangehen und nach dem 
+@-Zeichen muss mindestens ein alphanumerisches Zeichen folgen. Ein Punkt gehört zwingend in den 
+Teil der Eingabe, die dem @-Zeichen folgt. Aber erst nach dem ersten alphanumerischen Zeichen hinter dem 
+@-Zeichen. Dem Punkt folgen noch mindestens zwei alphanumerische Zeichen. 
+Die E-Mail-Adresse darf jedoch außer @ keine(!) nichtalphanumerischen Zeichen enthalten. </li>
+
+<li>Für Userid und Passwort werden maximal 20 und minimal 8 Zeichen gefordert. 
+Es dürfen nur alphanumerische Zeichen verwendet werden und mindestens ein Großbuchstabe, 
+ein Kleinbuchstabe und eine Zahl müssen darin vorkommen.</li>
+
+<li>Ebenso muss die Captcha-Angabe korrekt sein.</li>
+
+<li>Bestimmte kritische Zeichen bei der freien Texteingabe werden eliminiert.</li>
+
+</ul>

@@ -68,6 +68,4 @@ if (isset($_POST['zusatzinfos'])){echo $_POST['zusatzinfos'];}
 <!-- Absenden -->
 	<input type="submit" value="Daten absenden" class="hlink"/>
 	</form>
-	<div id="meldung"> 
-		Alle Pflichtfelder müssen ausgefüllt werde
-	</div>
+	<div id="meldung" ></div>

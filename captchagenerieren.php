@@ -25,7 +25,7 @@ for ($i = 0; $i < $anzahlZeichen; $i++) {
 $bgc = imagecolorallocate($image, 230, 230, 230);
 imagefill($image, 0, 0, $bgc);
 
-$font = "fonts/Anorexia.ttf";
+$font = "fonts/Anorexia_.ttf";
 if (file_exists($font)) {
   for ($i = 0; $i < $anzahlZeichen; $i++) {
     ImageTTFText($image, rand(20, 80), rand(-20, 60), 

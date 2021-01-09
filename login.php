@@ -46,7 +46,10 @@ if (0>version_compare(PHP_VERSION, '5')){
             public function _login() {
                 if ($this -> plausibilisieren()) {
                     $this -> anmelden_db();
+                } else {
+                    echo "<script>eingabefehler(0);</script>";
                 }
+
             }
             
             /** 
@@ -61,7 +64,7 @@ if (0>version_compare(PHP_VERSION, '5')){
              * @return true, wenn die Plausibilisierung 
              * keine Fehler ergab – sonst false 
              */
-             private function plausibilisieren() {
+            private function plausibilisieren() {
                  // Fehlervariable
                  $anmelden = 0;
                  $p = new plausi();
@@ -70,15 +73,15 @@ if (0>version_compare(PHP_VERSION, '5')){
                  $anmelden += $p -> captchatest($_POST['captcha']);
                  // Testausgaben für den derzeitigen Stand
                  // des Projekts
-                 echo "<hr /> Die Eingaben: <hr />";
+                 /*echo "<hr /> Die Eingaben: <hr />";
                  print_r($_POST);
-                 echo "<br />Fehleranzahl: " . $anmelden . "<hr />";
-                 if ($anmelden == 0){
+                 echo "<br />Fehleranzahl: " . $anmelden . "<hr />";*/
+                if ($anmelden == 0){
                      return true;
-                 } else {
+                } else {
                      return false;
-                 }
-             }
+                }
+            }
             
              /** 
              * Eintragen der Anmeldedaten in die Datenbank 

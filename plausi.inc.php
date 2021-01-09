@@ -11,16 +11,15 @@ class plausi {
         
         if (preg_match("/^\w{2,30}$|Ü|ü|Ö|ö|Ä|ä|ß$/", $wert)) {
             if (!preg_match("/\d/", $wert)){
-                echo "<hr />(Vor)Namen OK";
                 return 0;
             }
             else {
-                echo "<hr />Fehler in (Vor)Namen. Keine Leerzeichen zulässig...";
+                /*echo "<hr />Fehler in (Vor)Namen. Keine Leerzeichen zulässig...";*/
                 return 1;
             }
         } 
         else {
-            echo "<hr />Fehler in (Vor)Namen. Keine Leerzeichen zulässig...";
+            /*echo "<hr />Fehler in (Vor)Namen. Keine Leerzeichen zulässig...";*/
             return 1;
         }
         
@@ -45,10 +44,10 @@ class plausi {
         
         }*/
         if($fehler>0){
-            echo "<hr />Email Fehler: ".$fehler;
+            /*echo "<hr />Email Fehler: ".$fehler;*/
             return $fehler;
         }
-        echo "<hr />Email OK";
+        /*echo "<hr />Email OK";*/
         return $fehler;
        
     }
@@ -72,11 +71,11 @@ class plausi {
             $fehler++;
         }
         if($fehler>0){
-            echo "<hr />ID oder PW Fehler: ".$fehler. "<br />";
-            echo "Ihre UserId sowie Passwort müssen....";
+            /*echo "<hr />ID oder PW Fehler: ".$fehler. "<br />";
+            echo "Ihre UserId sowie Passwort müssen....";*/
             return $fehler;
         }
-        echo "<hr />UserID oder PW OK.";
+        /*echo "<hr />UserID oder PW OK.";*/
         return $fehler;
     }
     /** Testmethode für den Captchacode */

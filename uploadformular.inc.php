@@ -10,6 +10,14 @@
     <input type="submit" value="Starte upload" class="hlink" />
     <script type="text/javascript" src="lib/js/index.js"></script>
 </form>
-<div id="meldung"> 
-		Alle Pflichtfelder müssen ausgefüllt werde
+<div id="meldung">
+<?php
+    if (isset($_SESSION['upload'])) {
+        echo '<script>document.getElementById("meldung").style.visibility = "visible"; 
+         window.setTimeout(re, 3000);</script>';
+        echo $_SESSION['upload'];
+        unset($_SESSION['upload']);
+    }
+?>
 </div>
+<script type="text/javascript" src="lib/js/index.js"></script>

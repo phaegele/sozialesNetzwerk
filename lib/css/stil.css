@@ -124,14 +124,20 @@ a:hover{
     color: white; background: #6C0610;
 }
 #meldung {
-    position: relative; top: -180px; left: 420px;
-    text-align: center;
+    position: relative; top: -180px;
+    margin: 0 auto;
+    opacity: 0.7;
     visibility: hidden;
-    background: white; color: #6C0610;
-    width: 200px; height:40px;
-    margin: -40px; padding:10px;
-    border-style: inset; border-width: 3pt;
-    -moz-border-radius: 5px; -webkit-border-radius: 5px;
+    text-align: center;
+    background: white; 
+    color: #6C0610;
+    width: 350px; 
+    min-height:40px;
+    padding:20px;
+    border-style: inset; 
+    border-width: 3pt;
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px;
     border-radius: 5px;
     -moz-box-shadow: 5px 5px 5px #888;
     -webkit-box-shadow: 5px 5px 5px #888;
