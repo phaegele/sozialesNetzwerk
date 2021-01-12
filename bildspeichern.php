@@ -51,12 +51,14 @@ class Bildspeichern {
                         $bild = $_SESSION["dateiname"];
                         $zusatzinfos = $_POST["zusatzinfos"];
                         if ($stmt->execute(array(
-                            ':bild' => $bild,
-                            ':zusatzinfos' => $zusatzinfos,
-                            ':id_mitglied' => $userid))){
+                             ':bild' => $bild,
+                             ':zusatzinfos' => $zusatzinfos,
+                             ':id_mitglied' => $userid))){
                                 //$dat = "upload_ok.php";
                                 $_SESSION['upload'] = 
-                                "Der Dateiupload war OK";
+                                 "Der Dateiupload war OK";
+                                require_once ("lib/php/wertupdate.class.php");
+                                new WertUpdate("fragen", $_SESSION['id_mitglied']);
                         } else {
                             //$dat = "upload_fehler.php";
                             $_SESSION['upload'] = 

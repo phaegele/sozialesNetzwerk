@@ -14,12 +14,12 @@ class plausi {
                 return 0;
             }
             else {
-                /*echo "<hr />Fehler in (Vor)Namen. Keine Leerzeichen zulässig...";*/
+                //echo "<hr />Fehler in (Vor)Namen. Keine Zahlen zulässig...";
                 return 1;
             }
         } 
         else {
-            /*echo "<hr />Fehler in (Vor)Namen. Keine Leerzeichen zulässig...";*/
+            //echo "<hr />Fehler in (Vor)Namen. Keine Leerzeichen zulässig..";
             return 1;
         }
         

@@ -1,3 +1,5 @@
+/* Elemente und Universalselector */
+
 * {
     margin: 0; padding: 0;
     border: 0; outline: 0;
@@ -29,46 +31,8 @@ a {
     -webkit-box-shadow: 5px 2px 3px #888; 
     box-shadow: 5px 2px 3px #888;    
 }
-#nav {
-    width: 1000px; 
-    height: 40px;
-    margin: auto; 
-    padding: 10px;
-}     
-#content {
-    width: 1000px;
-    margin: auto; padding: 20px;
-    border-style: groove; border-width: 1pt;
-    -moz-border-radius: 5px; -webkit-border-radius: 5px;
-    border-radius: 5px;
-}
-#indextext {
-    text-align:justify;
-    background: white; color: #145D05;
-    margin: 5px; padding: 10px;
-    border-style: inset; border-width: 3pt;
-    -moz-border-radius: 5px; -webkit-border-radius: 5px;
-    border-radius: 5px;
-    -moz-box-shadow: 5px 5px 5px #888;
-    -webkit-box-shadow: 5px 5px 5px #888;
-    box-shadow: 5px 5px 5px #888;
-}
-.hlink {
-    text-decoration: none;
-    display: inline-block;
-    height: 35px;
-    text-align: center;
-    margin: 5px; padding:5px; 
-    border-style: groove; border-width: 1pt;
-    -moz-border-radius: 5px; -webkit-border-radius: 5px;
-    border-radius: 5px;
-    -moz-box-shadow: 5px 2px 3px #888;
-    -webkit-box-shadow: 5px 2px 3px #888;
-    box-shadow: 5px 2px 3px #888;
-}
-.spezielleUeber {
-    background: white; color: #145D05;
-    font-size: 110%;
+a:hover{
+    color: #145D05; background: white;
 }
 form {
     background: white; color: #145D05;
@@ -104,12 +68,15 @@ input {
     -webkit-box-shadow: 5px 2px 3px #888;
     box-shadow: 5px 2px 3px #888;
 }
-.reg_label {
-    display: inline-block; width: 200px;
-}
-.thumb  {
-    min-width: 150px; min-height: 100px;
-    margin: 10px; padding: 10px;
+
+/* Klassen */
+
+.hlink {
+    text-decoration: none;
+    display: inline-block;
+    height: 35px;
+    text-align: center;
+    margin: 5px; padding:5px; 
     border-style: groove; border-width: 1pt;
     -moz-border-radius: 5px; -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -117,11 +84,173 @@ input {
     -webkit-box-shadow: 5px 2px 3px #888;
     box-shadow: 5px 2px 3px #888;
 }
-a:hover{
-    color: #145D05; background: white;
-}
 .hlink:hover {
     color: white; background: #6C0610;
+}
+.spezielleUeber {
+    background: white; color: #145D05;
+    font-size: 110%;
+}
+.reg_label {
+    display: inline-block; width: 200px;
+}
+.thumb  {
+    width: 120px; 
+    height: 160px;
+    display: inline-block;
+    margin: 10px; 
+    padding: 10px;
+    border-style: groove; 
+    border-width: 1pt;
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 5px 2px 3px #888;
+    -webkit-box-shadow: 5px 2px 3px #888;
+    box-shadow: 5px 2px 3px #888;
+}
+.fehlermeldung {
+    color: #6c0610;
+}
+.captcha {
+    width: 200px;
+    margin: 10px;
+    border-style: groove;
+    border-width: 1pt;
+    -moz-border-radius: 5px; -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 5px 2px 3px #888;
+    -webkit-box-shadow: 5px 2px 3px #888;
+    box-shadow: 5px 2px 3px #888;
+
+}
+.detailbildcontainer {
+    height: 250px; width: 250px; margin: 3px;
+}
+.detailbild {
+    max-height: 240px; max-width: 240px; padding: 3px;
+}
+.vorschauinfos {
+    color: #145D05;
+    background: white;
+    margin: 5px;
+    padding: 15px;
+    width: 650px;
+    max-height: 150px;
+    overflow: scroll;
+    border-style: inline;
+    border-width: 1pt;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.hlink_klein {
+    text-decoration: none;
+    font-size: 12px;
+    height: 18px;
+    width: 110px;
+    text-align: center;
+    margin: 2px;
+    padding: 2px;
+    border-style: groove;
+    border-width: 1pt;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 5px 2px 3px #888;
+    -webkit-box-shadow: 5px 2px 3px #888;
+    box-shadow: 5px 2px 3px #888;
+}
+.thumb_bild {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border-style: dotted;
+    border-width: 1pt;
+    opacity: 0.9;
+    color: #888;
+}
+.thumb_bild:hover {
+    border-style: groove;
+    color: white;
+    opacity: 1;
+    -moz-box-shadow: 2px 2px 3px #888;
+    -webkit-box-shadow: 2px 2px 3px #888;
+    box-shadow: 2px 2px 3px #888;    
+}
+.rezepttab {
+    padding: 5px;
+    margin: 5px;
+    vertical-align: top;
+    border-style: groove;
+    border-width: 1pt;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 5px 2px 3px #888;
+    -webkit-box-shadow: 5px 2px 3px #888;
+    box-shadow: 5px 2px 3px #888;
+}
+
+/* ID's */
+
+#detailbereich {
+    height: 550px;
+    width: 98%;
+    margin: auto;
+    border-style: groove;
+    border-width: 1pt;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 5px 2px 3px #888;
+    -webkit-box-shadow: 5px 2px 3px #888;
+    box-shadow: 5px 2px 3px #888;
+    overflow-x: scroll;
+}
+#vorschauber {
+    height: 300px;
+    width: 98%;
+    margin:auto;
+    border-style: groove;
+    border-width: 1pt;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 5px 2px 3px #888;
+    -webkit-box-shadow: 5px 2px 3px #888;
+    box-shadow: 5px 2px 3px #888;
+}
+#nav {
+    width: 1000px; 
+    height: 40px;
+    margin: auto; 
+    padding: 10px;
+}     
+#content {
+    width: 1000px;
+    margin: auto; 
+    padding: 20px;
+    border-style: groove; 
+    border-width: 1pt;
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+#indextext {
+    text-align:justify;
+    background: white; 
+    color: #145D05;
+    margin: 5px; 
+    padding: 10px;
+    border-style: inset; 
+    border-width: 3pt;
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 5px 5px 5px #888;
+    -webkit-box-shadow: 5px 5px 5px #888;
+    box-shadow: 5px 5px 5px #888;
 }
 #meldung {
     position: relative; top: -180px;
@@ -143,18 +272,12 @@ a:hover{
     -webkit-box-shadow: 5px 5px 5px #888;
     box-shadow: 5px 5px 5px #888;
 }
-.fehlermeldung {
-    color: #6c0610;
+#rezeptformular {
+    width: 950px;
+    margin: 3px;
 }
-.captcha {
-    width: 200px;
-    margin: 10px;
-    border-style: groove;
-    border-width: 1pt;
-    -moz-border-radius: 5px; -webkit-border-radius: 5px;
-    border-radius: 5px;
-    -moz-box-shadow: 5px 2px 3px #888;
-    -webkit-box-shadow: 5px 2px 3px #888;
-    box-shadow: 5px 2px 3px #888;
-
+#detailinfo {
+    vertical-align: top;
+    padding: 5px;
+    margin: 5px;
 }
