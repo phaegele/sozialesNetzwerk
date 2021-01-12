@@ -21,7 +21,8 @@ session_start();
     </head>
 	<body>
         <div id="nav">
-		<?php 
+		<?php
+            @require ('lib/php/plausi.interface.php');
             @require ('lib/php/nav.php');
             @require ('lib/php/plausi.inc.php');
         ?>
@@ -61,7 +62,7 @@ session_start();
              * @return true, wenn die Plausibilisierung 
              * keine Fehler ergab – sonst false 
              */
-             private function plausibilisieren() {
+             public function plausibilisieren() {
                  // Fehlervariable
                  $anmelden = 0;
                  $p = new plausi();
