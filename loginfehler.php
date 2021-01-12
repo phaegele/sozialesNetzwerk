@@ -19,13 +19,13 @@
     <body>
         <div id="nav">
 <?php
-    @require ("nav.php");
+    @require ("lib/php/nav.php");
 ?>
         </div>
         <div id="content">
             <h1>Anmeldefehler</h1>
 <?php
-    @require ('login.inc.php');
+    @require ('lib/php/login.inc.php');
 
     class Loginfehler {
         public function fehler(){

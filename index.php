@@ -32,11 +32,11 @@ class MeineAusnahme extends Exception {}
 			$navFehler = false;
 
 			if ( (isset($_SESSION['login']) ) && ($_SESSION['login']  == true)){
-				if (!@include('navmitglieder.php')){
+				if (!@include('lib/php/navmitglieder.php')){
 					throw new MeineAusnahme();
 				}
 			} else {
-				if (!@include('nav.php')){
+				if (!@include('lib/php/nav.php')){
 					throw new MeineAusnahme();					
 				}
 			}
@@ -69,7 +69,7 @@ class MeineAusnahme extends Exception {}
 					
 			if (isset($_SESSION["login"]) && ($_SESSION["login"] == "true")) {
 			echo "<div id='indextext'><h3>Mitgliederbereich</h3>" . "Sie sind angemeldet.</div>";
-			@require("uploadformular.inc.php");
+			@require("lib/php/uploadformular.inc.php");
 			echo "<a href='vorschaubilder.php'" .
 					" target='vorschau'>Vorschau</a>";
 			

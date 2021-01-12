@@ -23,14 +23,14 @@ if (0>version_compare(PHP_VERSION, '5')){
 	<body>
         <div id="nav">
 		<?php 
-            @require ('nav.php');
-            @require ('plausi.inc.php');
+            @require ('lib/php/nav.php');
+            @require ('lib/php/plausi.inc.php');
         ?>
         </div>
         <div id="content">
 		<h1>Login</h1>
         <?php
-            @require ('login.inc.php');
+            @require ('lib/php/login.inc.php');
        
         /**
 		 * Foto2Gericht
@@ -90,7 +90,7 @@ if (0>version_compare(PHP_VERSION, '5')){
              */
             private function anmelden_db() {
                 $vorhanden = false;
-                @require_once('db.inc.php');
+                @require_once('lib/php/db.inc.php');
                  
                 if($stmt = $pdo -> prepare("SELECT userid, pw FROM mitglieder")){
                     $stmt -> execute();

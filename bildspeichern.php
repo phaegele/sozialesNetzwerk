@@ -33,7 +33,7 @@ class Bildspeichern {
                 $_SESSION["dateiname"] = $dateiname;
                 if (move_uploaded_file(
                  $_FILES['datei']['tmp_name'], 'images/'.$dateiname)){
-                    @require_once('db.inc.php');
+                    @require_once('lib/php/db.inc.php');
                     if ($stmt = $pdo -> prepare
                      ("SELECT userid, id_mitglied FROM mitglieder")){
                         $stmt -> execute();
