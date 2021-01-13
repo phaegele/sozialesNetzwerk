@@ -42,8 +42,13 @@ class Thumber {
         $verzeichnis = opendir($bv);
         while (($datei = readdir($verzeichnis)) !== false) {
             if ((preg_match("/\.jpe?g$/i", $datei)) || (preg_match("/\.png$/i", $datei))) {
-                echo "<a href='' class='thumb'><img src='$bv/$datei'"
-                 ." alt='Vorschaubild' /></a>";
+               /* echo "<a href='' class='thumb'><img src='$bv/$datei'"
+                 ." alt='Vorschaubild' /></a>";*/
+                echo "<div  class='thumb'><a class='hlink_klein'".
+                 " onclick='rezepte(\"$datei\")'>Rezepte anzeigen</a><br />".
+                 "<img class='thumb_bild' src='$bv/$datei' " . 
+                 "alt='Verschaubild' onclick='details(\"$datei\")' /></div>";
+				
             }
         }
         closedir($verzeichnis);
@@ -51,14 +56,14 @@ class Thumber {
 
     function __construct (){
         echo '<h1>Vorschau der Zutaten</h1>'.
-             '<h5>Mit einem Click auf ein Bild erhalten Sie' .
-             'mehr Informationen und Sie können einen' .
+             '<h5>Mit einem Click auf ein Bild erhalten Sie ' .
+             'mehr Informationen und Sie können einen ' .
              'Rezeptvorschlag abgeben.</h5>' .
              '<div id="vorschauber">' ;
         $this -> thumbernail_erstellen();
         $this -> thumbernail_anzeigen();
         echo '</div><h2>Details</h2>' .
-             '<div id="details"></div>' .
+             '<div id="detailbereich"></div>' .
              '<script type="text/javascript" ' .
              'src="lib/js/vorschau.js"></script>';
             

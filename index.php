@@ -69,7 +69,7 @@ class MeineAusnahme extends Exception {}
 					
 			if (isset($_SESSION["login"]) && ($_SESSION["login"] == "true")) {
 			echo "<div id='indextext'><h3>Mitgliederbereich</h3>" . "Sie sind angemeldet.</div>";
-			@require("lib/php/uploadformular.inc.php");
+			@require ("lib/php/uploadformular.inc.php");
 			@require ("lib/php/vorschau.class.php");
 			
 			} else if (isset($_SESSION["login"]) && ($_SESSION["login"] == "false")) {
