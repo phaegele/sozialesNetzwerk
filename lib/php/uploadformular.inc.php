@@ -1,5 +1,5 @@
 <h1 class="formueberschrift">Wählen Sie eine Datei zum Upload aus</h1>
-<form action="bildspeichern.php" method="post" enctype="multipart/form-data" id="uploadform">  
+<form action="bildspeichern.class.php" method="post" enctype="multipart/form-data" id="uploadform">  
     <label class=reg_label>Bildauswahl</label>
     <span class="pflichtmarker">*</span>
     <input name="datei" type="file" />

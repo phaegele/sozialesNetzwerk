@@ -59,7 +59,7 @@ if (isset($_POST['zusatzinfos'])){echo $_POST['zusatzinfos'];}
 	</textarea>
 	<br />
 <!-- Captcha -->
-	<img class="captcha" src="captchagenerieren.php" alt="Captcha" />
+	<img class="captcha" src="captchagenerieren.class.php" alt="Captcha" />
 	<br />
 	<label class="reg_label">Captcha</label>
 	<span class="pflichtmarker"> * </span>
